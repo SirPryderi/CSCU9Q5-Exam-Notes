@@ -137,14 +137,59 @@ SELECT `morty_id` FROM `standard_finite_curve_table` WHERE `id` = 'C-173';
 ### SQL Data Types
 Some of the most used data types in SQL.
 
-| Type            | Description                  |
-| :-------------- | :----------------------------|
-| VARCHAR         | String of variable length    |
-| INT             | Integer numbers              |
-| DECIMAL         | Numbers with decimal places  |
-| DATE            | A full date                  |
-| TEXT            | A long string of text        |
-| BOOLEAN         | Single binary value          |
+| Type    | Description                 |
+|-:-------|-:---------------------------|
+| VARCHAR | String of variable length   |
+| INT     | Integer numbers             |
+| DECIMAL | Numbers with decimal places |
+| DATE    | A full date                 |
+| TEXT    | A long string of text       |
+| BOOLEAN | Single binary value         |
+
+More data Types
+#### Numeric Data Types
+**Integers**
+
+| Type      | Size    |
+|-:---------|-:-------|
+| TINYINT   | 1 byte  |
+| SMALLINT  | 2 bytes |
+| MEDIUMINT | 3 bytes |
+| INT       | 4 bytes |
+| BIGINT    | 8 bytes |
+
+
+**Floating Point**
+
+| Type   | Size    |
+|-:------|-:-------|
+| FLOAT  | 4 bytes |
+| DOUBLE | 8 bytes |
+
+
+**Fixed Point**
+
+| Type               | Size                           |
+|-:------------------|-:------------------------------|
+| NUMERIC or DECIMAL | depends on precision and scale |
+
+**Boolean** is implemented as a _tinyint_.
+
+#### String Types
+- CHAR (length)
+- VARCHAR (length)
+
+#### Dates
+- DATETIME
+- DATE
+- TIME
+- YEAR
+
+#### Misc Types
+- ENUMERATIONS
+- SETS
+- BLOB
+- TEXT
 
 ### Create Table
 The following syntax can be used to create a new table in the database.
@@ -240,13 +285,13 @@ This table has the only aim of saving your life,
 so you better say `thanks` to it.
 
 | Relational algebra | SQL                   | UGLY Math Symbol |
-| :----------------- | :-------------------- | :--------------- |  
-| RESTRICT           | WHERE                 | σ                |   
-| PROJECT            | SELECT DISTINCT       | π                |  
+|-:------------------|-:---------------------|-:----------------|
+| RESTRICT           | WHERE                 | σ                |
+| PROJECT            | SELECT DISTINCT       | π                |
 | UNION              | UNION                 | ∪ _or_  +        |
 | DIFFERENCE         | NOT IN (SELECT ...)   | −                |
 | PRODUCT            | SELECT table1, table2 | ×                |
-| JOIN               | JOIN                  | ⋈               |
+| JOIN               | JOIN                  | ⋈                |
 | INTERSECTION       | IN (SELECT ...)       | ∩                |
 | DIVISION           | -                     | ÷                |
 
@@ -351,7 +396,6 @@ A relation is in 3NF if:
   - every non-key column is non-transitively
     fully functional-dependant on the primary key
 
-# Java and MySQL
 # SQL3 Data Types
 # ANSI-SPARC
 # Backup
