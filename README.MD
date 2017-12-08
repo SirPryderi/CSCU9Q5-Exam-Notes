@@ -16,6 +16,10 @@
 * [SQL](#sql)
   * [SQL Syntax](#sql-syntax)
     * [SQL Data Types](#sql-data-types)
+      * [Numeric Data Types](#numeric-data-types)
+      * [String Types](#string-types)
+      * [Dates](#dates)
+      * [Misc Types](#misc-types)
     * [Create Table](#create-table)
     * [Alter Table](#alter-table)
     * [Drop a table](#drop-a-table)
@@ -40,7 +44,6 @@
   * [First Normal Form](#first-normal-form)
   * [Second Normal Form](#second-normal-form)
   * [Third Normal Form](#third-normal-form)
-* [Java and MySQL](#java-and-mysql)
 * [SQL3 Data Types](#sql3-data-types)
 * [ANSI-SPARC](#ansisparc)
 * [Backup](#backup)
@@ -138,7 +141,7 @@ SELECT `morty_id` FROM `standard_finite_curve_table` WHERE `id` = 'C-173';
 Some of the most used data types in SQL.
 
 | Type    | Description                 |
-|-:-------|-:---------------------------|
+| :-------| :---------------------------|
 | VARCHAR | String of variable length   |
 | INT     | Integer numbers             |
 | DECIMAL | Numbers with decimal places |
@@ -151,7 +154,7 @@ More data Types
 **Integers**
 
 | Type      | Size    |
-|-:---------|-:-------|
+| :---------| :-------|
 | TINYINT   | 1 byte  |
 | SMALLINT  | 2 bytes |
 | MEDIUMINT | 3 bytes |
@@ -162,7 +165,7 @@ More data Types
 **Floating Point**
 
 | Type   | Size    |
-|-:------|-:-------|
+| :------| :-------|
 | FLOAT  | 4 bytes |
 | DOUBLE | 8 bytes |
 
@@ -170,7 +173,7 @@ More data Types
 **Fixed Point**
 
 | Type               | Size                           |
-|-:------------------|-:------------------------------|
+| :------------------| :------------------------------|
 | NUMERIC or DECIMAL | depends on precision and scale |
 
 **Boolean** is implemented as a _tinyint_.
@@ -285,7 +288,7 @@ This table has the only aim of saving your life,
 so you better say `thanks` to it.
 
 | Relational algebra | SQL                   | UGLY Math Symbol |
-|-:------------------|-:---------------------|-:----------------|
+| :------------------| :---------------------| :----------------|
 | RESTRICT           | WHERE                 | σ                |
 | PROJECT            | SELECT DISTINCT       | π                |
 | UNION              | UNION                 | ∪ _or_  +        |
