@@ -1,5 +1,11 @@
 # Table of Contents
 * [The Relational Model](#the-relational-model)
+  * [Terminology](#terminology)
+  * [Properties of Relation](#properties-of-relation)
+  * [Keys](#keys)
+    * [Superkeys](#superkeys)
+    * [Candidate Keys](#candidate-keys)
+    * [Foreign Key](#foreign-key)
 * [Entity Relationship Modelling](#entity-relationship-modelling)
 * [SQL](#sql)
 * [Relational Algebra](#relational-algebra)
