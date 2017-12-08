@@ -25,6 +25,15 @@
     * [Joins](#joins)
     * [Groups](#groups)
 * [Relational Algebra](#relational-algebra)
+  * [SQL Equivalents](#sql-equivalents)
+  * [Operators](#operators)
+    * [Restriction](#restriction)
+    * [Projection](#projection)
+    * [Product](#product)
+    * [Joins](#joins)
+      * [Natural Join](#natural-join)
+    * [Union](#union)
+    * [Difference](#difference)
 * [Normalisation](#normalisation)
 * [Java and MySQL](#java-and-mysql)
 * [SQL3 Data Types](#sql3-data-types)
@@ -33,6 +42,7 @@
 * [Concurrency](#concurrency)
 * [Recovery](#recovery)
 * [Administering Databases](#administering-databases)
+
 
 # The Relational Model
 The relational model was proposed by the mathematician Edward Codd in 1970.
