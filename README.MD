@@ -205,6 +205,97 @@ SELECT Staff.name Element.name FROM Staff
 Yeah, you can group stuff. I can't teach you everything, read a book or something.
 
 # Relational Algebra
+Relational algebra provides a theoretical foundation for relational databases,
+particularly for query languages, such as SQL.
+
+The main five operators in Relational Algebra are:
+- **Restriction**
+- **Projection**
+- **Union**
+- **Difference**
+- (Cartesian) **Product**
+
+From which are derived the remaining three:
+- **Join**
+- **Intersection**
+- **Division**
+
+## SQL Equivalents
+This table has the only aim of saving your life,
+so you better say `thanks` to it.
+
+| Relational algebra | SQL                   | UGLY Math Symbol |
+| :----------------- | :-------------------- | :--------------- |  
+| RESTRICT           | WHERE                 | σ                |   
+| PROJECT            | SELECT DISTINCT       | π                |  
+| UNION              | UNION                 | ∪ _or_  +        |
+| DIFFERENCE         | NOT IN (SELECT ...)   | −                |
+| PRODUCT            | SELECT table1, table2 | ×                |
+| JOIN               | JOIN                  | ⋈               |
+| INTERSECTION       | IN (SELECT ...)       | ∩                |
+| DIVISION           | -                     | ÷                |
+
+## Operators
+![Relational Algebra Operators][RelationalAlgebraOperators]
+
+### Restriction
+The restriction operator works on a single relation _R_
+and defines a new relation that contains only those rows
+of R that satisfy some specified condition _C_.
+
+In other words, makes a subset of _R_ that satisfy the condition _C_.
+
+```
+RESTRICT R TO C
+```
+
+### Projection
+The projection operator works on a single relation _R_ and defines a relation
+that contains a subset of the columns of _R_.
+
+In other words, you just select one or more column.
+
+```
+PROJECT ColumnsList FROM R
+```
+
+### Product
+The product operator produces a table with the concatenation of every row of _R_ with every row of _S_.
+
+```
+R × S
+```
+
+Combining a **Product** and a **Restriction** you get a **Join**! Just like Minecraft.
+
+### Joins
+Joins are used to concatenate tables given a particular condition.
+There are various types of joins, like Natural Join, Equi-join, Outer Join, Semi-join.
+
+#### Natural Join
+It is usually used to join a foreign key with the values of its referencing rows.
+For example, if you get the department name, when you are selecting a table of employees that contains a foreign key towards the department table.
+
+```
+R ⋈ S
+```
+
+### Union
+The union operator of two relations _R_ and _S_ is obtained by pooling
+their rows into one relation.
+
+```
+R ∪ S
+```
+
+### Difference
+The difference operator defines a relation consisting of all rows that are in
+the relation _R_, but not in the relation _S_.
+
+```
+R ─ S
+```
+
 # Normalisation
 # Java and MySQL
 # SQL3 Data Types
@@ -213,3 +304,6 @@ Yeah, you can group stuff. I can't teach you everything, read a book or somethin
 # Concurrency
 # Recovery
 # Administering Databases
+
+
+[RelationalAlgebraOperators]: https://www.safaribooksonline.com/library/view/relational-theory-for/9781449365431/httpatomoreillycomsourceoreillyimages1665827.png.jpg
