@@ -35,6 +35,11 @@
     * [Union](#union)
     * [Difference](#difference)
 * [Normalisation](#normalisation)
+  * [Anomalies](#anomalies)
+  * [Functional Dependency](#functional-dependency)
+  * [First Normal Form](#first-normal-form)
+  * [Second Normal Form](#second-normal-form)
+  * [Third Normal Form](#third-normal-form)
 * [Java and MySQL](#java-and-mysql)
 * [SQL3 Data Types](#sql3-data-types)
 * [ANSI-SPARC](#ansisparc)
@@ -330,8 +335,6 @@ on a column (or set of columns) X if at any one time exactly one Y value is asso
 A functional dependency is expressed with the notation `X → Y`;
 
 Example: `UserId → UserName`
-
-Note that
 
 ## First Normal Form
 A relation is in 1NF if no entry consists of more than one value
