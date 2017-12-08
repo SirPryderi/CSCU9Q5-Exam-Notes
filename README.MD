@@ -307,6 +307,47 @@ R ─ S
 ```
 
 # Normalisation
+
+## Anomalies
+Anomalies are inconvenient or error-prone situation arising when we process the tables. There are three types of anomalies:
+
+- **Update Anomalies** ─ when one or more instances of duplicated data is updated, but not all.
+- **Delete Anomalies** ─ when certain attributes are lost because of the deletion of other attributes.
+- **Insert Anomalies** ─ when certain attributes cannot be inserted into the database without the presence of other attributes.
+
+In order to address these issues, the only and true Codd gave us normalisation rules.
+
+> For Codd so loved the world, that he gave his Normalisation Rules,
+> that whoever believes in him should not perish in redundancy and anomalies,
+> but have eternal consistency.
+>
+> ─ John 3:16
+
+## Functional Dependency
+In any relation a column (or set of columns) Y is _functionally dependant_
+on a column (or set of columns) X if at any one time exactly one Y value is associated with any X value. Note that a functional dependency only goes one way.
+
+A functional dependency is expressed with the notation `X → Y`;
+
+Example: `UserId → UserName`
+
+Note that
+
+## First Normal Form
+A relation is in 1NF if no entry consists of more than one value
+(i.e. does not have repeating groups)
+
+## Second Normal Form
+A relation is in 2NF if:
+  - it is in 1NF
+  - every non-key column is fully functional-dependent on the primary key
+
+## Third Normal Form
+A relation is in 3NF if:
+  - it is in 2NF
+  - every non-key column is non-transitively
+    fully functional-dependant on the primary key
+
 # Java and MySQL
 # SQL3 Data Types
 # ANSI-SPARC
