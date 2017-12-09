@@ -134,7 +134,7 @@ Although not mandatory, it is good practice to write reserved words UPPERCASE in
 Example of fussily written SQL query:
 
 ```SQL
-SELECT `morty_id` FROM `standard_finite_curve_table` WHERE `id` = 'C-173';
+SELECT `morty_id` FROM `standard_finite_curve_table` WHERE `id` = 'C-137';
 ```
 
 ### SQL Data Types
