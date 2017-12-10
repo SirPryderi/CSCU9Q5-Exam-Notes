@@ -44,13 +44,17 @@
   * [First Normal Form](#first-normal-form)
   * [Second Normal Form](#second-normal-form)
   * [Third Normal Form](#third-normal-form)
-* [SQL3 Data Types](#sql3-data-types)
 * [ANSI-SPARC](#ansisparc)
-* [Backup](#backup)
 * [Concurrency](#concurrency)
+  * [Transactions](#transactions)
+  * [Locks](#locks)
+* [Backup](#backup)
 * [Recovery](#recovery)
 * [Administering Databases](#administering-databases)
-
+  * [Data Dictionary](#data-dictionary)
+  * [Data Administrator](#data-administrator)
+  * [Database Administrator](#database-administrator)
+  * [Distributed Databases](#distributed-databases)
 
 # The Relational Model
 The relational model was proposed by the mathematician Edward Codd in 1970.
@@ -399,12 +403,88 @@ A relation is in 3NF if:
   - every non-key column is non-transitively
     fully functional-dependant on the primary key
 
-# SQL3 Data Types
 # ANSI-SPARC
-# Backup
+Maybe one day I'll read those slides. BUT IT IS NOT THIS DAY!
+
 # Concurrency
+
+##  Transactions
+A **transaction** is an action or series of actions, carried out by a single
+user or application program, which accesses or changes the content of
+the database.
+
+A transaction should always transform the database towards a
+consistent state.
+
+If a transaction completes successfully, it is made persistent, this process
+is called a _commit_.
+If a transaction fails, it is reverted, and this is called
+_roll-back_.
+This way, the database is always consistent at the end of a transaction, regardless
+of its success.
+
+Transaction should be ACID, meaning with a pH lower than `7`.
+No, seriously ACID stands for:
+
+- **Atomicity** ─ A transaction is an indivisible unit that is either performed
+in its entirety, or not performed at all.
+- **Consistency** ─ A transaction transforms the database from one consistent state to another.
+- **Independence** ─ The transactions execute Independently from one another. In other words the effects of an incomplete transaction are invisible to the others.
+- **Durability** ─ The effect of a committed transaction are permanent and must not be loss because of a failure.
+
+## Locks
+
+In order to prevent issues with concurrent transactions, a lock can be used to
+prevent two transaction to access/write the same data at the same time.
+There are two types of lock:
+- **Read Lock** ─ _Shared_ lock that prevents other transaction to write.
+- **Write Lock** ─ _Exclusive_ lock that prevents other transaction to read and write.
+
+As usual, every time you fix one thing, you break another, and locks can conduce
+to a **dead lock**, or a loop of transaction blocking each other to access a
+resource. To overcome this issue, transactions should request all the locks
+at the beginning (**growing phase**), and release all the locks at the of the
+transaction. I heard that in case of dead-lock, pull the plug might be a good
+option, but don't take my word for it.
+
+# Backup
+
 # Recovery
+
 # Administering Databases
+## Data Dictionary
+- A DBMS must provide facilities to allow users to find out the properties
+of the stored items (metadata).
+- These facilities may also be used by components of the DBMS itself.
+- The Data Dictionary must hold information about the tables, view, forms, queries and reports stored in the database.
+
+## Data Administrator
+Within any organisation using a shared DBMS, we will expect to find a Database Administrator (DBA).
+At the very minimum, the DBA will be responsible for the orderly running of the program.
+For instance, an instance of oracle runs at all the time.
+However, in most organisations, many users will be sharing data, and the shared database will be crucial to the core business.
+
+The data may be divided into different systems ─ for example the University has:
+- Finance
+- Student records
+- Recruitment and Admissions
+
+Under these circumstances managerial role of the IS professional would be very important.
+
+## Database Administrator
+There is often a distinction between the roles of the Database Administrator
+and the Data Administrator, both of which have specific responsibilities that complement each other.
+The Data Administrator has more strategic and managerial role.
+The Database Administrator has more technical role.
+
+## Distributed Databases
+
+- **Distributed Database**
+  - A logically interrelated collection of shared data, physically distributed over a computer network.
+  - Could be across two computers in the same room or across the world.
+  - Under the control of more than one CPU.
+- **Distributed Database Management System**
+  - Software system that permits the management of the distributed database and makes the distribution transparent to users.
 
 
 [RelationalAlgebraOperators]: https://www.safaribooksonline.com/library/view/relational-theory-for/9781449365431/httpatomoreillycomsourceoreillyimages1665827.png.jpg
