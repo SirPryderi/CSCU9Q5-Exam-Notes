@@ -48,7 +48,6 @@
 * [Concurrency](#concurrency)
   * [Transactions](#transactions)
   * [Locks](#locks)
-* [Backup](#backup)
 * [Recovery](#recovery)
 * [Administering Databases](#administering-databases)
   * [Data Dictionary](#data-dictionary)
@@ -447,9 +446,23 @@ at the beginning (**growing phase**), and release all the locks at the of the
 transaction. I heard that in case of dead-lock, pull the plug might be a good
 option, but don't take my word for it.
 
-# Backup
-
 # Recovery
+Recovery Control is the process of restoring the database to a consistent state in case of failure. During this process the DBMS must ensure that all
+the ACID properties are still valid.
+
+There are two main effects of a database fault:
+- The loss of main memory, including database buffers.
+- The loss of disk copy of the database.
+
+DBMS usually provides the following tools to perform an emergency recovery:
+
+- **Backup Mechanism** ─ Makes periodic backups of the database.
+- **Logging Facilities** ─ Keeps track of the current state of transaction.
+- **Checkpoint Facilities** ─ Enables in-progress updates to be made permanent.
+- **Recovery Manager** ─ Restores the system to a consistent state after a failure.
+
+**Deferred updates**, in contrast to _immediate updates_, only makes a transaction persistent after it has been committed.
+
 
 # Administering Databases
 ## Data Dictionary
